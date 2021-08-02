@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Menu 2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="main-menu fixtop">
+        <div class="main-menu__brand">
+            <p>Cadernos Cicomp</p>
+        </div>
+        <div id="main-menu-wrap" class="main-menu__wrap">
+            <div class="main-menu__wrap-left">
+                <a class="main-menu__menu-item" href="#">Home</a>
+                <a class="main-menu__menu-item" href="#">Posts</a>
+                <a class="main-menu__menu-item" href="#">Categories</a>
+                <a class="main-menu__menu-item" href="#">Pages</a>
+            </div>
+            <div class="main-menu__wrap-right">
+                <a class="main-menu__menu-item" href="#">Contact</a>
+                <a class="main-menu__menu-item" href="#">About</a>
+                <a class="main-menu__menu-item" href="#">Contact</a>
+                <a class="main-menu__menu-item" href="">About</a>
+            </div>
+        </div>
+        <button id="main-menu-button" type="button" class="main-menu__button">
+        </button>
+    </nav>
+    <h1 style="margin-top: 4rem;">Hello World</h1>
+    <script>
+        const mainButton = document.getElementById('main-menu-button')
+        mainButton.addEventListener("click", () => {
+            const menuWrap = document.getElementById('main-menu-wrap')
+            if (menuWrap.style.display === "flex") {
+                menuWrap.style.display = "none";
+            } else {
+                menuWrap.style.display = "flex";
+            }
+        });
+    </script>
+</body>
+</html>

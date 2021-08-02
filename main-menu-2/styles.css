@@ -1,0 +1,87 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+.fixtop {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.main-menu {
+    width: 100%;
+    height: 4rem;
+    box-sizing: border-box;
+    background-color: blue;
+}
+.main-menu__wrap {
+    position: relative;
+    top: 64px;
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+}
+.main-menu__wrap-left, .main-menu__wrap-right {
+    display: flex;
+    flex-direction: row;
+    flex-direction: column;
+    background-color: #04AA6D;
+}
+.main-menu__menu-item {
+    padding: .5em 0;
+    border-bottom: 1px solid black;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    color: blue;
+}
+.main-menu__button {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    width: 48px;
+    height: 48px;
+    z-index: 30;
+    margin-top: .5rem;
+    background-image: url("images/topnav-icon.png");
+    background-color: white;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+    .main-menu__wrap {
+        position: sticky;
+        display: flex;
+        flex-direction: row;
+        background-color: inherit;
+    }
+    .main-menu__wrap-left {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto 0 1rem;
+        background-color: inherit;
+    }
+    .main-menu__wrap-right {
+        display: flex;
+        flex-direction: row;
+        margin: 0 1rem 0 auto;
+        background-color: inherit;
+    }
+    .main-menu__menu-item {
+        border-bottom: none;
+        padding: 1rem .5rem 1.5rem .5rem;
+        text-decoration: none;
+        cursor: pointer;
+        color: #fff;
+    }
+    .main-menu__menu-item:hover {
+        background-color: lightcoral;
+        color: blue;
+    }
+    .main-menu__button {
+        display: none;
+    }
+}

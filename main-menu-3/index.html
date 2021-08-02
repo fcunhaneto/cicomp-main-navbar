@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Menu 3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="main-menu">
+        <div class="main-menu-brand">
+            <a>Cadernos Cicomp</a>
+        </div>
+        <div id="main-menu-content" class="main-menu-content">
+            <div class="main-menu-content-left">
+                <a class="main-menu-item">Home</a>
+                <a class="main-menu-item">Pages</a>
+                <a class="main-menu-item">Categories</a>
+            </div>
+            <div class="main-menu-content-right">
+                <a class="main-menu-item">About</a>
+                <a class="main-menu-item">Contact</a>
+                <a class="main-menu-item">Login</a>
+            </div>
+        </div>
+        <button id="main-menu-button" type="button" class="main-menu__button">
+        </button>
+    </nav>
+    
+    <script>
+        const mainButton = document.getElementById('main-menu-button')
+        const menuWrap = document.getElementById('main-menu-content')
+        
+        // On click in main menu toggle content between show or hide.
+        mainButton.addEventListener("click", () => {
+            if (menuWrap.style.display === "flex") {
+                menuWrap.style.display = "none";
+            } else {
+                menuWrap.style.display = "flex";
+            }
+        })
+        // Show or hide if window is resized.
+        window.addEventListener('resize', () => {
+            if(window.innerWidth < 768) {
+                menuWrap.style.display = "none";
+            } else {
+                menuWrap.style.display = "flex";
+            }
+        });
+        // Close the content if the user clicks outside of it.
+        window.addEventListener('click', function(e) {
+            if (!e.target.matches('#main-menu-button')) {
+                const myDropdown = document.getElementById("main-menu-content");
+                if ( menuWrap.style.display === "flex") {
+                    menuWrap.style.display = 'none'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
